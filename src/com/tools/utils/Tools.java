@@ -8,14 +8,14 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Tools {
-	private ArrayList<URL> targets = new ArrayList<>();
+	private static ArrayList<URL> targets = new ArrayList<>();
 
 	/*
 	 * @param url 需要添加的地址
 	 * 
 	 * @return void
 	 */
-	public void addUrl(String url) {
+	public static void addUrl(String url) {
 		try {
 			URL target = new URL(url);
 			targets.add(target);
@@ -29,9 +29,10 @@ public class Tools {
 	 * 
 	 * @param count 刷取的次数 -1为一直刷
 	 */
-	public void work(int time, int count) {
+	public static void work(int time, int count) {
 		int num = 0;
 		if (count == -1) {
+			System.out.println("开始刷");
 			while (true) {
 				for (int i = 0; i < targets.size(); i++) {
 					try {
@@ -52,6 +53,7 @@ public class Tools {
 				
 			}
 		} else {
+			System.out.println("开始刷");
 			for(int j=0;j<count;j++) {
 				for (int i = 0; i < targets.size(); i++) {
 					try {
